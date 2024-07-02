@@ -18,7 +18,7 @@
         }
         #box{
             background: white;
-            width: 500px;
+            width: 600px;
             height: 300px;
             border-radius: 20px;
             margin-top: 30px;
@@ -77,10 +77,15 @@
 }
 
 .all{
-    margin: 10px;
+    margin: 20px;
     text-align: center;
-   
+    font-family: sans-serif;
     
+}
+.input{
+    border: 2px solid gray;
+    border-radius:10px;
+    padding: 5px;
 }
     </style>
 </head>
@@ -89,24 +94,35 @@
 
 <body>
     <div id="div-main">
-        <div id="box" class="box-flex .all" ><h1>Please Enter yourn name</h1>
+        <div id="box" class="box-flex all" style="color: rgb(80, 80, 80);" ><h1>Please Enter your Email</h1>
         
 
-            <form action="/submit-name" method="post" class="all">
+           
                 <div>
-                    <label for="name">Enter your name:</label>
-                    <input class="all" style="font-size: larger;" type="text" id="name" name="name" required>
+              
+                    <input placeholder="email"  class="all input"  style="font-size:larger;" type="email" id="name" name="name" required>
                 </div>
                 <div class="all">
               
-                    <button type="submit" class="button-55" role="button">Submit</button>
+                    <button onClick=submit_handler() type="submit" id="submit1" class="button-55" >Submit</button>
                 </div>
                 
            
-            </form></div>
+          </div>
         
     </div>
 
 </body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const submit_handler=async ()=>{
+   const input_email= document.getElementById('name').value
+        // alert(input_name)
+        const resp=await axios.post('/submit',{
+            email:input_email
+        })
+        console.log(resp)
+    }
 
+</script>
 </html>
