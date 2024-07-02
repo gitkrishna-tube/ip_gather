@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #div-main {
+            background: #4B0082;
+            display: flex;
+            justify-content: center;
+            height: 100vw;
+        }
+        #box{
+            background: white;
+            width: 500px;
+            height: 300px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+        .box-flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 500px;
+        }
+    
+
+
+/* CSS */
+.button-55 {
+  align-self: center;
+  background-color: #aa14e6;
+
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #f1f1f1;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.all{
+    margin: 10px;
+    text-align: center;
+   
+    
+}
+    </style>
+</head>
+
+
+
+<body>
+    <div id="div-main">
+        <div id="box" class="box-flex .all" ><h1>Please Enter yourn name</h1>
+        
+
+            <form action="/submit-name" method="post" class="all">
+                <div>
+                    <label for="name">Enter your name:</label>
+                    <input class="all" style="font-size: larger;" type="text" id="name" name="name" required>
+                </div>
+                <div class="all">
+              
+                    <button type="submit" class="button-55" role="button">Submit</button>
+                </div>
+                
+           
+            </form></div>
+        
+    </div>
+
+</body>
+
+</html>
