@@ -6,87 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My App</title>
     <style>
-        *{
+        * {
             padding: 0px;
             margin: 0px;
         }
+
         #div-main {
             background: #4B0082;
             display: flex;
             justify-content: center;
             height: 100vw;
         }
-        #box{
+
+        #box {
             background: white;
             width: 600px;
             height: 300px;
             border-radius: 20px;
             margin-top: 30px;
         }
-        .box-flex{
+
+        .box-flex {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             margin-top: 500px;
         }
-    
 
 
-/* CSS */
-.button-55 {
-  align-self: center;
-  background-color: #aa14e6;
 
-  background-image: none;
-  background-position: 0 90%;
-  background-repeat: repeat no-repeat;
-  background-size: 4px 3px;
-  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
-  border-style: solid;
-  border-width: 2px;
-  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
-  box-sizing: border-box;
-  color: #f1f1f1;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Neucha, sans-serif;
-  font-size: 1rem;
-  line-height: 23px;
-  outline: none;
-  padding: .75rem;
-  text-decoration: none;
-  transition: all 235ms ease-in-out;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+        /* CSS */
+        .button-55 {
+            align-self: center;
+            background-color: #aa14e6;
 
-.button-55:hover {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-  transform: translate3d(0, 2px, 0);
-}
+            background-image: none;
+            background-position: 0 90%;
+            background-repeat: repeat no-repeat;
+            background-size: 4px 3px;
+            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+            box-sizing: border-box;
+            color: #f1f1f1;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Neucha, sans-serif;
+            font-size: 1rem;
+            line-height: 23px;
+            outline: none;
+            padding: .75rem;
+            text-decoration: none;
+            transition: all 235ms ease-in-out;
+            border-bottom-left-radius: 15px 255px;
+            border-bottom-right-radius: 225px 15px;
+            border-top-left-radius: 255px 15px;
+            border-top-right-radius: 15px 225px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
 
-.button-55:focus {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-}
+        .button-55:hover {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+            transform: translate3d(0, 2px, 0);
+        }
 
-.all{
-    margin: 20px;
-    text-align: center;
-    font-family: sans-serif;
-    
-}
-.input{
-    border: 2px solid gray;
-    border-radius:10px;
-    padding: 5px;
-}
+        .button-55:focus {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+        }
+
+        .all {
+            margin: 20px;
+            text-align: center;
+            font-family: sans-serif;
+
+        }
+
+        .input {
+            border: 2px solid gray;
+            border-radius: 10px;
+            padding: 5px;
+        }
     </style>
 </head>
 
@@ -94,35 +98,46 @@
 
 <body>
     <div id="div-main">
-        <div id="box" class="box-flex all" style="color: rgb(80, 80, 80);" ><h1>Please Enter your Email</h1>
-        
+        <div id="box" class="box-flex all" style="color: rgb(80, 80, 80);">
+            <h1>Please Enter your Email</h1>
 
-           
-                <div>
-              
-                    <input placeholder="email"  class="all input"  style="font-size:larger;" type="email" id="name" name="name" required>
-                </div>
-                <div class="all">
-              
-                    <button onClick=submit_handler() type="submit" id="submit1" class="button-55" >Submit</button>
-                </div>
-                
-           
-          </div>
-        
+
+
+            <div>
+
+                <input placeholder="email" class="all input" style="font-size:larger;" type="email" id="name"
+                    name="name" required>
+            </div>
+            <div class="all">
+
+                <button onClick=submit_handler() type="submit" id="submit1" class="button-55">Submit</button>
+            </div>
+
+
+        </div>
+
     </div>
 
 </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-    const submit_handler=async ()=>{
-   const input_email= document.getElementById('name').value
-        // alert(input_name)
-        const resp=await axios.post('/submit',{
-            email:input_email
-        })
-        console.log(resp)
+    const submit_handler = async () => {
+        try {
+            const input_email = document.getElementById('name').value
+            // alert(input_name)
+            const resp = await axios.post('/submit', {
+                email: input_email
+            })
+
+            console.log(resp)
+            alert('data submitted')
+        } catch (error) {
+            console.log('error')
+            alert('internal error')
+        }
+
     }
 
 </script>
+
 </html>
