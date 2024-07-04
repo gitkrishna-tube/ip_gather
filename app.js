@@ -13,7 +13,9 @@ app.use(requestIp.mw());
 
 // Serve the static HTML file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    console.log('serer started')
+    // res.json({msg:"hello"})
+    res.sendFile(path.join(__dirname, 'public', 'xyz.html'));
 });
 
 // Handle form submission
